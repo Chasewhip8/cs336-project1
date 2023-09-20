@@ -82,7 +82,7 @@ public class DFATest {
 				+ "	b	a	b\n"
 				+ "q0 = a\n"
 				+ "F = { b }";
-		
+
 		assertTrue(dfaStr.replaceAll("\\s", "").equals(expStr.replaceAll("\\s", "")));
 		
 		System.out.println("dfa1 toString pass");

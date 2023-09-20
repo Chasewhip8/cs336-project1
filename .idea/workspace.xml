@@ -4,21 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f85b9b08-4e6d-42e0-931b-b3abdd8fa049" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+    <list default="true" id="f85b9b08-4e6d-42e0-931b-b3abdd8fa049" name="Changes" comment="Add initial">
+      <change afterPath="$PROJECT_DIR$/src/main/java/fa/DFAState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fa/dfa/Transition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fa/dfa/DFA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fa/dfa/DFA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fa/dfa/DFAInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fa/dfa/DFAInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dfa/DFATest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dfa/DFATest.java" afterDir="false" />
+    </list>
+    <list id="04f8333b-e5a2-48d1-8416-c576c4c5eaf0" name="Changes by maxmonciardini" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/fa/dfa/DFA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fa/dfa/DFA.java" afterDir="false" />
     </list>
-    <list id="04f8333b-e5a2-48d1-8416-c576c4c5eaf0" name="Changes by maxmonciardini" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,6 +50,27 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/fa/dfa/DFA.java">
+      <ranges>
+        <range start1="2" end1="2" start2="2" end2="3" changelist="f85b9b08-4e6d-42e0-931b-b3abdd8fa049" />
+        <range start1="4" end1="5" start2="5" end2="6" changelist="f85b9b08-4e6d-42e0-931b-b3abdd8fa049" />
+        <range start1="7" end1="7" start2="8" end2="36" changelist="f85b9b08-4e6d-42e0-931b-b3abdd8fa049" />
+        <range start1="9" end1="10" start2="38" end2="40" changelist="f85b9b08-4e6d-42e0-931b-b3abdd8fa049" />
+        <range start1="14" end1="15" start2="44" end2="51" changelist="04f8333b-e5a2-48d1-8416-c576c4c5eaf0" />
+        <range start1="19" end1="20" start2="55" end2="67" changelist="f85b9b08-4e6d-42e0-931b-b3abdd8fa049" />
+        <range start1="24" end1="25" start2="71" end2="72" changelist="f85b9b08-4e6d-42e0-931b-b3abdd8fa049" />
+        <range start1="29" end1="30" start2="76" end2="94" changelist="f85b9b08-4e6d-42e0-931b-b3abdd8fa049" />
+        <range start1="34" end1="35" start2="98" end2="99" changelist="f85b9b08-4e6d-42e0-931b-b3abdd8fa049" />
+        <range start1="39" end1="39" start2="103" end2="108" changelist="f85b9b08-4e6d-42e0-931b-b3abdd8fa049" />
+        <range start1="44" end1="45" start2="113" end2="119" changelist="f85b9b08-4e6d-42e0-931b-b3abdd8fa049" />
+        <range start1="49" end1="50" start2="123" end2="129" changelist="f85b9b08-4e6d-42e0-931b-b3abdd8fa049" />
+        <range start1="54" end1="55" start2="133" end2="150" changelist="f85b9b08-4e6d-42e0-931b-b3abdd8fa049" />
+        <range start1="58" end1="60" start2="153" end2="180" changelist="f85b9b08-4e6d-42e0-931b-b3abdd8fa049" />
+        <range start1="61" end1="61" start2="181" end2="232" changelist="f85b9b08-4e6d-42e0-931b-b3abdd8fa049" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 5
 }]]></component>
@@ -76,7 +93,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
@@ -87,7 +104,103 @@
       <recent name="$PROJECT_DIR$/src/test/java" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.cs336-project1 [build]">
+  <component name="RunManager" selected="Gradle.DFATest">
+    <configuration name="DFATest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;dfa.DFATest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="DFATest2.test1_1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;dfa.DFATest2.test1_1&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="DFATest.test1_4" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;dfa.DFATest.test1_4&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="DFATest.test2_5" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;dfa.DFATest.test2_5&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="cs336-project1 [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -110,32 +223,13 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="cs336-project1 [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="jar" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.DFATest2.test1_1" />
+        <item itemvalue="Gradle.DFATest" />
+        <item itemvalue="Gradle.DFATest.test1_4" />
+        <item itemvalue="Gradle.DFATest.test2_5" />
         <item itemvalue="Gradle.cs336-project1 [build]" />
-        <item itemvalue="Gradle.cs336-project1 [jar]" />
       </list>
     </recent_temporary>
   </component>
@@ -147,11 +241,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695145929529</updated>
-      <workItem from="1695145930527" duration="1404000" />
+      <workItem from="1695145930527" duration="10267000" />
     </task>
+    <task id="LOCAL-00001" summary="Add initial">
+      <option name="closed" value="true" />
+      <created>1695159655441</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695159655441</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add initial" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add initial" />
   </component>
 </project>

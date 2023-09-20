@@ -42,7 +42,7 @@ public interface DFAInterface extends FAInterface {
 	 * and symb2.
 	 * @return a copy of this DFA
 	 */
-	public DFAInterface swap(char symb1, char symb2);
+	public DFA swap(char symb1, char symb2);
 
 
 }
