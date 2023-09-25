@@ -3,7 +3,7 @@ package fa.dfa;
 import fa.FAInterface;
 
 
-public interface DFAInterface extends FAInterface {
+public interface DFAInterface extends FAInterface{
 
 	/**
 	 * Construct the textual representation of the DFA, for example

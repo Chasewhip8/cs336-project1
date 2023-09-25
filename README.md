@@ -18,7 +18,7 @@ The codebase is logically separated into various packages and classes:
 │   ├── DFAState.java
 │   └── FAInterface.java
 │   └── State.java
-└── fa.dfa
+└── fa.test.dfa
     ├── DFA.java
     ├── DFAInterface.java
     └── Transition.java
@@ -37,11 +37,11 @@ Assuming that Java is installed, follow the instructions below:
 1. Navigate to your project directory.
 2. Compile the Java files:
    ```
-   javac fa/dfa/*.java fa/*.java
+   javac src/main/java/fa/test.dfa/*.java src/main/java/fa/*.java
    ```
 3. Run your preferred main class using the Java VM:
    ```
-   java fa.dfa.DFA
+   java fa.test.dfa.DFA
    ```
 
 

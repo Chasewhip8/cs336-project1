@@ -1,14 +1,16 @@
-package dfa;
+package test.dfa;
+
+import static org.junit.Assert.*;
 
 import java.util.Set;
 
-import fa.dfa.DFA;
-import fa.dfa.DFAInterface;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import fa.dfa.DFA;
 
 public class DFATest {
+	
+	
 	//------------------- dfa1 tests ----------------------//
 	private DFA dfa1() {
 		DFA dfa = new DFA();
@@ -82,16 +84,18 @@ public class DFATest {
 				+ "	b	a	b\n"
 				+ "q0 = a\n"
 				+ "F = { b }";
-
+		
 		assertTrue(dfaStr.replaceAll("\\s", "").equals(expStr.replaceAll("\\s", "")));
 		
 		System.out.println("dfa1 toString pass");
 	}
-
+	
+	
+	
 	@Test
 	public void test1_5() {
-		DFAInterface dfa = dfa1();
-		DFAInterface dfaSwap = dfa.swap('1', '0');
+		DFA dfa = dfa1();
+		DFA dfaSwap = dfa.swap('1', '0');
 		
 		//different DFA objects
 		assertTrue(dfa != dfaSwap);
@@ -113,8 +117,8 @@ public class DFATest {
 	
 	@Test
 	public void test1_6() {
-		DFAInterface dfa = dfa1();
-		DFAInterface dfaSwap = dfa.swap('1', '0');
+		DFA dfa = dfa1();
+		DFA dfaSwap = dfa.swap('1', '0');
 		assertFalse(dfaSwap.accepts("1"));
 		assertTrue(dfaSwap.accepts("0"));
 		assertFalse(dfaSwap.accepts("11"));
@@ -215,8 +219,8 @@ public class DFATest {
 	
 	@Test
 	public void test2_5() {
-		DFAInterface dfa = dfa2();
-		DFAInterface dfaSwap = dfa.swap('1', '0');
+		DFA dfa = dfa2();
+		DFA dfaSwap = dfa.swap('1', '0');
 		//different DFA objects
 		assertTrue(dfa != dfaSwap);
 		//different DFA states
@@ -238,8 +242,8 @@ public class DFATest {
 	
 	@Test
 	public void test2_6() {
-		DFAInterface dfa = dfa2();
-		DFAInterface dfaSwap = dfa.swap('1', '0');
+		DFA dfa = dfa2();
+		DFA dfaSwap = dfa.swap('1', '0');
 		assertFalse(dfaSwap.accepts("101"));
 		assertTrue(dfaSwap.accepts("11"));
 		assertFalse(dfaSwap.accepts("010"));
@@ -370,8 +374,8 @@ public void test3_4() {
 
 @Test
 public void test3_5() {
-	DFAInterface dfa = dfa3();
-	DFAInterface dfaSwap = dfa.swap('2', '1');
+	DFA dfa = dfa3();
+	DFA dfaSwap = dfa.swap('2', '1');
 	assertTrue(dfa != dfaSwap);
 	assertTrue(dfa.getState("A") != dfaSwap.getState("A"));
 	assertTrue(dfa.getState("G") != dfaSwap.getState("G"));
@@ -391,8 +395,8 @@ public void test3_5() {
 
 @Test
 public void test3_6() {
-	DFAInterface dfa = dfa3();
-	DFAInterface dfaSwap = dfa.swap('2', '1');
+	DFA dfa = dfa3();
+	DFA dfaSwap = dfa.swap('2', '1');
 	assertTrue(dfaSwap.accepts("212121212"));
 	assertTrue(dfaSwap.accepts("21112121212"));
 	assertFalse(dfaSwap.accepts("21"));

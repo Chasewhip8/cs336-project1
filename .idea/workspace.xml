@@ -4,19 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f85b9b08-4e6d-42e0-931b-b3abdd8fa049" name="Changes" comment="Add initial">
-      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="f85b9b08-4e6d-42e0-931b-b3abdd8fa049" name="Changes" comment="More tests and a readme">
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/dfa/OurDFATest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fa/DFAState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fa/DFAState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fa/dfa/DFA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fa/dfa/DFA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fa/dfa/Transition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fa/dfa/Transition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dfa/DFATest2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dfa/OurDFATest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dfa/DFATest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/dfa/DFATest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dfa/OurDFATest.java" beforeDir="false" />
     </list>
     <list id="04f8333b-e5a2-48d1-8416-c576c4c5eaf0" name="Changes by maxmonciardini" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/dfa/DFATest2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dfa/OurDFATest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fa/dfa/DFA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fa/dfa/DFA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fa/dfa/Transition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fa/dfa/Transition.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +24,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="3774" />
+    <option name="totalTimeSeconds" value="5981" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -48,6 +48,12 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="cs336-project1" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="cs336-project1" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
@@ -86,25 +92,12 @@
     </option>
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/test/java/dfa/OurDFATest.java">
+    <file path="$PROJECT_DIR$/README.md">
       <ranges>
-        <range start1="2" end1="4" start2="2" end2="3" changelist="f85b9b08-4e6d-42e0-931b-b3abdd8fa049" />
-        <range start1="8" end1="8" start2="7" end2="9" changelist="04f8333b-e5a2-48d1-8416-c576c4c5eaf0" />
-        <range start1="10" end1="11" start2="11" end2="12" changelist="f85b9b08-4e6d-42e0-931b-b3abdd8fa049" />
-        <range start1="34" end1="35" start2="35" end2="80" changelist="04f8333b-e5a2-48d1-8416-c576c4c5eaf0" />
-        <range start1="36" end1="37" start2="81" end2="82" changelist="04f8333b-e5a2-48d1-8416-c576c4c5eaf0" />
-        <range start1="44" end1="45" start2="89" end2="89" changelist="04f8333b-e5a2-48d1-8416-c576c4c5eaf0" />
-        <range start1="47" end1="52" start2="91" end2="134" changelist="04f8333b-e5a2-48d1-8416-c576c4c5eaf0" />
-        <range start1="53" end1="55" start2="135" end2="180" changelist="04f8333b-e5a2-48d1-8416-c576c4c5eaf0" />
-        <range start1="56" end1="62" start2="181" end2="184" changelist="04f8333b-e5a2-48d1-8416-c576c4c5eaf0" />
-        <range start1="63" end1="70" start2="185" end2="187" changelist="04f8333b-e5a2-48d1-8416-c576c4c5eaf0" />
-        <range start1="72" end1="73" start2="189" end2="189" changelist="04f8333b-e5a2-48d1-8416-c576c4c5eaf0" />
-        <range start1="74" end1="75" start2="190" end2="195" changelist="04f8333b-e5a2-48d1-8416-c576c4c5eaf0" />
-        <range start1="76" end1="76" start2="196" end2="198" changelist="04f8333b-e5a2-48d1-8416-c576c4c5eaf0" />
-        <range start1="77" end1="77" start2="199" end2="220" changelist="04f8333b-e5a2-48d1-8416-c576c4c5eaf0" />
-        <range start1="78" end1="79" start2="221" end2="252" changelist="f85b9b08-4e6d-42e0-931b-b3abdd8fa049" />
-        <range start1="80" end1="80" start2="253" end2="262" changelist="f85b9b08-4e6d-42e0-931b-b3abdd8fa049" />
-        <range start1="81" end1="81" start2="263" end2="269" changelist="f85b9b08-4e6d-42e0-931b-b3abdd8fa049" />
+        <range start1="1" end1="1" start2="1" end2="3" changelist="04f8333b-e5a2-48d1-8416-c576c4c5eaf0" />
+        <range start1="20" end1="21" start2="22" end2="23" changelist="f85b9b08-4e6d-42e0-931b-b3abdd8fa049" />
+        <range start1="39" end1="40" start2="41" end2="42" changelist="f85b9b08-4e6d-42e0-931b-b3abdd8fa049" />
+        <range start1="43" end1="44" start2="45" end2="46" changelist="f85b9b08-4e6d-42e0-931b-b3abdd8fa049" />
       </ranges>
     </file>
   </component>
@@ -145,94 +138,86 @@
     </key>
   </component>
   <component name="RunManager" selected="Gradle.cs336-project1 [test]">
-    <configuration name="OurDFATest.testCloneIntegrity" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="cs336-project1 [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;dfa.OurDFATest.testCloneIntegrity&quot;" />
+            <option value="buildDependents" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="OurDFATest.testDFAWithMissingTransitions" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="cs336-project1 [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;dfa.OurDFATest.testDFAWithMissingTransitions&quot;" />
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="OurDFATest.testDFAWithUnreachableStates" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="cs336-project1 [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;dfa.OurDFATest.testDFAWithUnreachableStates&quot;" />
+            <option value="clean" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="OurDFATest.testNonDeterministicBehavior" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="cs336-project1 [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;dfa.OurDFATest.testNonDeterministicBehavior&quot;" />
+            <option value="jar" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
@@ -261,10 +246,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.cs336-project1 [test]" />
-        <item itemvalue="Gradle.OurDFATest.testNonDeterministicBehavior" />
-        <item itemvalue="Gradle.OurDFATest.testDFAWithMissingTransitions" />
-        <item itemvalue="Gradle.OurDFATest.testCloneIntegrity" />
-        <item itemvalue="Gradle.OurDFATest.testDFAWithUnreachableStates" />
+        <item itemvalue="Gradle.cs336-project1 [build]" />
+        <item itemvalue="Gradle.cs336-project1 [clean]" />
+        <item itemvalue="Gradle.cs336-project1 [buildDependents]" />
+        <item itemvalue="Gradle.cs336-project1 [jar]" />
       </list>
     </recent_temporary>
   </component>
@@ -277,7 +262,7 @@
       <option name="presentableId" value="Default" />
       <updated>1695145929529</updated>
       <workItem from="1695145930527" duration="10267000" />
-      <workItem from="1695629959259" duration="3932000" />
+      <workItem from="1695629959259" duration="6233000" />
     </task>
     <task id="LOCAL-00001" summary="Add initial">
       <option name="closed" value="true" />
@@ -287,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695159655441</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="More tests and a readme">
+      <created>1695633930049</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1695633930049</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,6 +287,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add initial" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add initial" />
+    <MESSAGE value="More tests and a readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="More tests and a readme" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
