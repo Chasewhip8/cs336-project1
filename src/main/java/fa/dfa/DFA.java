@@ -5,6 +5,33 @@ import fa.State;
 
 import java.util.*;
 
+/**
+ * This class represents a Deterministic Finite Automaton (DFA) and provides
+ * methods to manipulate and query its states, transitions, and behaviors.
+ * <p>
+ * A DFA is defined by:
+ * <ul>
+ *     <li>An input alphabet, Sigma (σ)</li>
+ *     <li>A finite set of states</li>
+ *     <li>A transition function that determines the next state for a given state and input symbol</li>
+ *     <li>An initial (or start) state</li>
+ *     <li>A set of final (or accepting) states</li>
+ * </ul>
+ * This class also provides functionality to add states, define transitions, set initial and final states,
+ * and evaluate whether a given string is accepted by the DFA.
+ * </p>
+ * <p>
+ * Additionally, it supports advanced operations like swapping transition labels between two symbols.
+ * </p>
+ * <p>
+ * Note: This implementation uses {@link LinkedHashSet} to maintain the order of insertion for states and the alphabet.
+ * Transitions are stored in a {@link HashMap} for efficient lookup.
+ * </p>
+ *
+ * @author Max Monciardini and Chase Whipple
+ * @see DFAState
+ * @see DFAInterface
+ */
 public class DFA implements DFAInterface {
     // Sigma is the input alphabet
     private final Set<Character> sigma;

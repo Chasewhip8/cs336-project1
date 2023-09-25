@@ -1,5 +1,7 @@
 # DFA Simulator in Java
 
+By: Max Monciardini and Chase Whipple
+
 ## Overview
 
 The Deterministic Finite Automaton (DFA) Simulator is a simple, yet powerful Java application that allows you to simulate the behavior of DFAs. In the theory of computation, a DFA, as formalized by the 7-tuple (Q, Σ, δ, q0, F), is a model of computation for a machine that changes its states based on the given inputs according to the deterministic transition function, δ.

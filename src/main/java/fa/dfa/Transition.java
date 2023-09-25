@@ -8,6 +8,7 @@ import java.util.Objects;
  * This class represents a transition in a deterministic finite automaton (DFA).
  * A transition is defined by a starting state and a character symbol, which
  * guides the transition to the next state.
+ * @author Max Monciardini and Chase Whipple
  */
 public class Transition {
     // The state from which the transition originates.
