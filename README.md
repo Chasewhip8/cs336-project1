@@ -4,8 +4,6 @@ By: Max Monciardini and Chase Whipple
 
 ## File Structure
 
-The codebase is logically separated into various packages and classes:
-
 ```bash
 .
 ├── fa
@@ -41,20 +39,20 @@ Understandability and extensibility were the guiding principles for the design o
 
 # NFA Project
 
-## How to Run
+The non-deterministic finite automaton (NFA) Simulator, like its counterpart in deterministic finite automaton simulation, is a dynamic Java application designed to simulate the operation of NFAs. As defined in the theory of computation, an NFA, formalized by the 7-tuple (Q, Σ, δ, q0, F), allows for non-deterministic transitions, meaning that there can be multiple next states for the same current state and input symbol, or even transitions without input symbols (ε-transitions).
+
+Our NFA Simulator offers a convenient platform to create, manipulate, and analyze NFAs. Its key objective is determining whether a specific string can be accepted by the NFA. Despite the inherent complexity of non-deterministic systems, the simulator is built to efficiently handle such processes.
+
+## How to compile the projects
 
 Assuming that Java is installed, follow the instructions below:
 
 1. Navigate to your project directory.
 2. Compile the Java files:
    ```
-   javac src/main/java/fa/test.dfa/*.java src/main/java/fa/*.java
+   javac fa/*.java fa/nfa/*.java fa/dfa/*.java 
+   javac -cp .:/usr/share/java/junit.jar ./test/nfa/NFATest.java ./test/dfa/DFATest.java
    ```
-3. Run your preferred main class using the Java VM:
-   ```
-   java fa.test.dfa.DFA
-   ```
-
 
 ## Running Tests
 

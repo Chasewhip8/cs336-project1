@@ -4,6 +4,35 @@ import fa.State;
 
 import java.util.*;
 
+/**
+ * This class represents a Non-Deterministic Finite Automaton (NFA) and provides
+ * methods to manipulate and query its states, transitions, and behaviors.
+ * <p>
+ * An NFA is defined by:
+ * <ul>
+ *     <li>An input alphabet, Sigma (σ), which also includes the epsilon (ε) transition</li>
+ *     <li>A finite set of states</li>
+ *     <li>A transition function that determines the set of next states for a given state and input symbol</li>
+ *     <li>An initial (or start) state</li>
+ *     <li>A set of final (or accepting) states</li>
+ * </ul>
+ * This class also provides functionality to add states, define transitions, set initial and final states,
+ * and evaluate whether a given string can be accepted by the NFA through any of its possible paths.
+ * </p>
+ * <p>
+ * Additionally, it supports operations like computing the epsilon closure of a state and determining
+ * the maximum number of active states the NFA can be in after processing a given string.
+ * </p>
+ * <p>
+ * Note: This implementation uses {@link LinkedHashSet} to maintain the order of insertion for states and the alphabet.
+ * Transitions are stored in a {@link HashMap} for efficient lookup. Due to its non-deterministic nature, an NFA can
+ * transition to multiple states for a given input symbol, or even without any input through epsilon transitions.
+ * </p>
+ *
+ * @author Max Monciardini and Chase Whipple
+ * @see NFAState
+ * @see NFAInterface
+ */
 public class NFA implements NFAInterface {
     // Sigma is the input alphabet
     private final Set<Character> sigma;
@@ -167,6 +196,13 @@ public class NFA implements NFAInterface {
         return state.isInitialState();
     }
 
+    /**
+     * Determines if a given string is accepted by the NFA.
+     * This method uses a breadth-first search strategy to traverse the NFA and
+     * check if it reaches a final state with the given input string.
+     * @param s the string to be checked
+     * @return true if the string is accepted; false otherwise
+     */
     @Override
     public boolean accepts(String s) {
         if (initialState == null){
@@ -187,6 +223,13 @@ public class NFA implements NFAInterface {
         return false;
     }
 
+    /**
+     * Computes the maximum number of active states the NFA can be in after processing
+     * a given string. This is essentially the "width" of the NFA at its broadest point during
+     * the processing of the string.
+     * @param s the input string
+     * @return the maximum number of active states
+     */
     @Override
     public int maxCopies(String s) {
         if (initialState == null){
@@ -223,6 +266,14 @@ public class NFA implements NFAInterface {
         return maxCount;
     }
 
+    /**
+     * Processes the given state with the next symbol in the input string and
+     * adds the resulting states to the queue for further processing.
+     * This method is used during the breadth-first search traversal in the `accepts` method.
+     * @param states the queue of states to be processed
+     * @param searchState the current state and the remaining part of the input string
+     * @return true if the NFA reaches a final state with the remaining input string; false otherwise
+     */
     private boolean processStates(Queue<SearchState> states, SearchState searchState) {
         char symbol = searchState.getSearchString().charAt(0);
         NFAState state = searchState.getCurrentState();
@@ -249,6 +300,14 @@ public class NFA implements NFAInterface {
         return false;
     }
 
+    /**
+     * Processes the given state with the next symbol in the input string and
+     * adds the resulting states to the queue for further processing.
+     * This method is used during the breadth-first search traversal in the `accepts` method.
+     * @param states the queue of states to be processed
+     * @param searchState the current state and the remaining part of the input string
+     * @return true if the NFA reaches a final state with the remaining input string; false otherwise
+     */
     private boolean processEpsilonState(Queue<SearchState> states, SearchState searchState) {
         Set<NFAState> nextStates = eClosure(searchState.getCurrentState());
 
@@ -269,12 +328,25 @@ public class NFA implements NFAInterface {
         return false;
     }
 
+    /**
+     * Retrieves the set of states the NFA transitions to from a given state
+     * on a specific input symbol.
+     * @param from the starting state
+     * @param onSymb the input symbol
+     * @return the set of states reachable from the starting state on the input symbol
+     */
     @Override
     public Set<NFAState> getToState(NFAState from, char onSymb) {
         Transition transition = new Transition(from, onSymb);
         return transitionMap.get(transition);
     }
 
+    /**
+     * Computes the epsilon closure of a given state. The epsilon closure is the set of
+     * states reachable from the given state only by epsilon transitions.
+     * @param s the starting state
+     * @return the set of states in the epsilon closure of the given state
+     */
     @Override
     public Set<NFAState> eClosure(NFAState s) {
         Set<NFAState> eClosure = new HashSet<>();

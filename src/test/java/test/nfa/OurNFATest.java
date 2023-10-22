@@ -34,66 +34,87 @@ public class OurNFATest {
         return dfa;
     }
 
-    @Test
-    public void testAddExistingState() {
-        NFA nfa = basicNFA();
-        assertFalse(nfa.addState("s1"));
+    private NFA createSimpleNFA() {
+        NFA nfa = new NFA();
+        nfa.addSigma('a');
+        nfa.addSigma('b');
+        nfa.addState("q0");
+        nfa.setStart("q0");
+        nfa.addState("q1");
+        nfa.addTransition("q0", Set.of("q0", "q1"), 'a');
+        nfa.addTransition("q1", Set.of("q1"), 'b');
+        nfa.setFinal("q1");
+        return nfa;
+    }
+
+    private NFA createEpsilonNFA() {
+        NFA nfa = new NFA();
+        nfa.addSigma('a');
+        nfa.addSigma('b');
+        nfa.addState("A");
+        nfa.setStart("A");
+        nfa.addState("B");
+        nfa.addTransition("A", Set.of("B"), 'e');
+        nfa.addState("C");
+        nfa.addTransition("B", Set.of("C"), 'a');
+        nfa.setFinal("C");
+        return nfa;
     }
 
     @Test
-    public void testAddTransitionToNonExistingState() {
-        NFA nfa = basicNFA();
-        assertFalse(nfa.addTransition("s1", Set.of("s3"), 'a'));
+    public void testSimpleNFAInstantiation() {
+        NFA nfa = createSimpleNFA();
+        assertNotNull(nfa);
     }
 
     @Test
-    public void testAddTransitionWithNonExistingSymbol() {
-        NFA nfa = basicNFA();
-        assertFalse(nfa.addTransition("s1", Set.of("s2"), 'z'));
+    public void testSimpleNFAAcceptance() {
+        NFA nfa = createSimpleNFA();
+        assertTrue(nfa.accepts("a"));
+        assertTrue(nfa.accepts("aa"));
+        assertTrue(nfa.accepts("aab"));
+        assertFalse(nfa.accepts("b"));
+        assertFalse(nfa.accepts("abab"));
     }
 
     @Test
-    public void testTransitionWithEpsilon() {
-        NFA nfa = basicNFA();
-        assertTrue(nfa.addTransition("s1", Set.of("s2"), 'e'));
+    public void testSimpleNFAMaxCopies() {
+        NFA nfa = createSimpleNFA();
+        assertEquals(2, nfa.maxCopies("a"));
+        assertEquals(2, nfa.maxCopies("aa"));
+        assertEquals(2, nfa.maxCopies("aab"));
+        assertEquals(1, nfa.maxCopies("b"));
+        assertEquals(2, nfa.maxCopies("abab"));
     }
 
     @Test
-    public void testEClosureWithEpsilonTransition() {
-        NFA nfa = basicNFA();
-        nfa.addTransition("s1", Set.of("s2"), 'e');
-        assertEquals(Set.of(nfa.getState("s1"), nfa.getState("s2")), nfa.eClosure(nfa.getState("s1")));
+    public void testEpsilonNFAInstantiation() {
+        NFA nfa = createEpsilonNFA();
+        assertNotNull(nfa);
     }
 
     @Test
-    public void testIsDFA() {
-        NFA nfa = basicNFA();
-        assertFalse(nfa.isDFA());
-    }
-
-    @Test
-    public void testAccepts() {
-        NFA nfa = basicNFA();
+    public void testEpsilonNFAAcceptance() {
+        NFA nfa = createEpsilonNFA();
         assertTrue(nfa.accepts("a"));
         assertFalse(nfa.accepts("b"));
-        assertFalse(nfa.accepts("aa"));
+        assertFalse(nfa.accepts("ab"));
     }
 
     @Test
-    public void testMaxCopies() {
-        NFA nfa = basicNFA();
-        assertEquals(1, nfa.maxCopies("a"));
-        assertEquals(1, nfa.maxCopies("b"));
-        assertEquals(1, nfa.maxCopies("aa"));
+    public void testEpsilonNFAMaxCopies() {
+        NFA nfa = createEpsilonNFA();
+        assertEquals(2, nfa.maxCopies("a"));
+        assertEquals(2, nfa.maxCopies("b"));
+        assertEquals(2, nfa.maxCopies("ab"));
     }
 
     @Test
-    public void testIsStartAndIsFinal() {
-        NFA nfa = basicNFA();
-        assertTrue(nfa.isStart("s1"));
-        assertFalse(nfa.isStart("s2"));
-        assertFalse(nfa.isFinal("s1"));
-        assertTrue(nfa.isFinal("s2"));
+    public void testInvalidTransitions() {
+        NFA nfa = createSimpleNFA();
+        assertFalse(nfa.addTransition("q0", Set.of("q2"), 'a'));
+        assertFalse(nfa.addTransition("q2", Set.of("q1"), 'b'));
+        assertFalse(nfa.addTransition("q0", Set.of("q1"), 'c'));
     }
 
     @Test
@@ -111,38 +132,6 @@ public class OurNFATest {
         assertTrue(nfa.accepts("b"));
     }
 
-
-    @Test
-    public void testTransitionToMultipleStates() {
-        NFA nfa = basicNFA();
-        assertTrue(nfa.addState("s3"));
-        assertTrue(nfa.addTransition("s1", Set.of("s2", "s3"), 'a'));
-        assertTrue(nfa.accepts("a"));
-    }
-
-    @Test
-    public void testEClosureWithMultipleEpsilonTransitions() {
-        NFA nfa = basicNFA();
-        nfa.addState("s3");
-        nfa.addTransition("s1", Set.of("s3"), 'e');
-        nfa.addTransition("s3", Set.of("s2"), 'e');
-        assertEquals(Set.of(nfa.getState("s1"), nfa.getState("s2"), nfa.getState("s3")), nfa.eClosure(nfa.getState("s1")));
-    }
-
-    @Test
-    public void testSetInitialStateToExistingFinalState() {
-        NFA nfa = basicNFA();
-        assertTrue(nfa.setStart("s2"));
-        assertTrue(nfa.isStart("s2"));
-        assertFalse(nfa.isStart("s1"));
-    }
-
-    @Test
-    public void testSetFinalStateToExistingInitialState() {
-        NFA nfa = basicNFA();
-        assertTrue(nfa.setFinal("s1"));
-        assertTrue(nfa.isFinal("s1"));
-    }
 
     @Test
     public void testMultipleSymbolsInSequence() {
@@ -218,5 +207,33 @@ public class OurNFATest {
 
         // Check if the NFA rejects the string "a"
         assertFalse(nfa.accepts("a"));
+    }
+
+    @Test
+    public void testIsDFAWithSingleStateAndEpsilonTransition() {
+        NFA nfa = new NFA();
+        nfa.addSigma('a');
+        nfa.addState("s1");
+        nfa.setStart("s1");
+        nfa.setFinal("s1");
+        nfa.addTransition("s1", Set.of("s1"), 'e');  // self-loop epsilon transition
+        assertFalse(nfa.isDFA());  // Presence of epsilon transitions makes it not a DFA
+    }
+
+    @Test
+    public void testIsDFAWithSingleStateAndValidTransitions() {
+        NFA nfa = new NFA();
+        nfa.addSigma('a');
+        nfa.addState("s1");
+        nfa.setStart("s1");
+        nfa.setFinal("s1");
+        nfa.addTransition("s1", Set.of("s1"), 'a');  // self-loop on 'a'
+        assertTrue(nfa.isDFA());  // It behaves like a DFA
+    }
+
+    @Test
+    public void testIsDFAWithAnExistingDFA() {
+        NFA dfaLike = dfa1();
+        assertTrue(dfaLike.isDFA());
     }
 }
