@@ -3,25 +3,35 @@ package test.nfa;
 import static org.junit.Assert.*;
 
 import java.util.Set;
+
 import org.junit.Test;
 import fa.nfa.NFA;
 
 public class OurNFATest {
+    private NFA dfa1() {
+        NFA dfa = new NFA();
+        dfa.addSigma('0');
+        dfa.addSigma('1');
 
-    private NFA basicNFA() {
-        NFA nfa = new NFA();
+        assertTrue(dfa.addState("a"));
+        assertTrue(dfa.addState("b"));
+        assertTrue(dfa.setStart("a"));
+        assertTrue(dfa.setFinal("b"));
 
-        nfa.addSigma('a');
-        nfa.addSigma('b');
+        assertFalse(dfa.addState("a"));
+        assertFalse(dfa.setStart("c"));
+        assertFalse(dfa.setFinal("c"));
 
-        assertTrue(nfa.addState("s1"));
-        assertTrue(nfa.setStart("s1"));
-        assertTrue(nfa.addState("s2"));
-        assertTrue(nfa.setFinal("s2"));
+        assertTrue(dfa.addTransition("a", Set.of("a"), '0'));
+        assertTrue(dfa.addTransition("a", Set.of("b"), '1'));
+        assertTrue(dfa.addTransition("b", Set.of("a"), '0'));
+        assertTrue(dfa.addTransition("b", Set.of("b"), '1'));
 
-        assertTrue(nfa.addTransition("s1", Set.of("s2"), 'a'));
+        assertFalse(dfa.addTransition("c", Set.of("b"), '1'));
+        assertFalse(dfa.addTransition("a", Set.of("c"), '1'));
+        assertFalse(dfa.addTransition("a", Set.of("b"), '2'));
 
-        return nfa;
+        return dfa;
     }
 
     @Test

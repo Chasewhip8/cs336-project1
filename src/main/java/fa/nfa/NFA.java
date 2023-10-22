@@ -1,6 +1,6 @@
 package fa.nfa;
 
-import fa.Transition;
+import fa.State;
 
 import java.util.*;
 
@@ -330,8 +330,162 @@ public class NFA implements NFAInterface {
         return true;
     }
 
+    /**
+     * Determines if the current NFA behaves like a DFA.
+     * An NFA behaves like a DFA if, for every state and every symbol in the alphabet (excluding epsilon),
+     * there is exactly one transition.
+     *
+     * @return true if the NFA behaves like a DFA; false otherwise.
+     */
     @Override
     public boolean isDFA() {
-        return false;
+        for (Map.Entry<Transition, Set<NFAState>> entry : transitionMap.entrySet()) {
+            if (entry.getKey().transition == 'e' || entry.getValue().size() > 1) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * This class represents a transition in a deterministic finite automaton (DFA).
+     * A transition is defined by a starting state and a character symbol, which
+     * guides the transition to the next state.
+     * @author Max Monciardini and Chase Whipple
+     */
+    public static class Transition {
+        // The state from which the transition originates.
+        private final State state;
+
+        // The input symbol that triggers the transition.
+        private final char transition;
+
+        /**
+         * Creates a new Transition object from a starting state and a transition symbol.
+         *
+         * @param state The state from which the transition originates.
+         * @param transition The input symbol that triggers the transition.
+         */
+        public Transition(State state, char transition) {
+            this.state = state;
+            this.transition = transition;
+        }
+
+        /**
+         * This method returns the current state from where the DFA is transiting.
+         *
+         * @return The state from which the transition originates.
+         */
+        public State getState() {
+            return state;
+        }
+
+        /**
+         * This method returns the character symbol that this Transition object
+         * represents.
+         *
+         * @return The input symbol that triggers the transition.
+         */
+        public char getTransition() {
+            return transition;
+        }
+
+        /**
+         * This method checks if this transition is equivalent to a given object.
+         * A transition is deemed equivalent if and only if the object is also a
+         * Transition, and their startState fields are equivalent as per the
+         * DFAState class's equals method, and their transition fields have the
+         * same value.
+         *
+         * @param o The object with which this transition is to be compared with.
+         * @return true if the object is equivalent to this transition; false
+         * otherwise.
+         */
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Transition that = (Transition) o;
+            return transition == that.transition && Objects.equals(state, that.state);
+        }
+
+        /**
+         * This method returns the hash code of this transition object.
+         * The hash code of a transition is calculated based on its startState
+         * and transition fields.
+         *
+         * @return The hash code of this transition.
+         */
+        @Override
+        public int hashCode() {
+            return Objects.hash(state, transition);
+        }
+    }
+
+    /**
+     * This class represents a state of the search in the non-deterministic finite automaton (NFA).
+     * It contains a search string and the current state of the automaton.
+     */
+    public static class SearchState {
+        // Represents the string for which we are searching in some context.
+        private final String searchString;
+
+        // Represents the current state of the NFA during a search operation.
+        private final NFAState currentState;
+
+        /**
+         * This constructor initializes a new instance of the SearchState class.
+         *
+         * @param searchString A String that represents the search term.
+         * @param currentState A NFAState representing the current state of the non-deterministic finite automaton.
+         */
+        public SearchState(String searchString, NFAState currentState) {
+            this.searchString = searchString;
+            this.currentState = currentState;
+        }
+
+        /**
+         * This method returns the search string for this instance of `SearchState`.
+         *
+         * @return searchString The search string.
+         */
+        public String getSearchString() {
+            return searchString;
+        }
+
+        /**
+         * This method returns the current state of the non-deterministic finite automaton.
+         *
+         * @return currentState The current state of the NFA.
+         */
+        public NFAState getCurrentState() {
+            return currentState;
+        }
+
+        /**
+         * This method overrides the equals method from the Object superclass.
+         * It checks for equality based on the searchString and currentState properties of this object.
+         *
+         * @param o An Object that we want to compare to the current instance.
+         * @return A boolean that is true if the objects are equal and false otherwise.
+         */
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            SearchState that = (SearchState) o;
+            return Objects.equals(searchString, that.searchString) && Objects.equals(currentState, that.currentState);
+        }
+
+        /**
+         * This method overrides the hashCode method from the Object superclass.
+         * It returns a hash code value for this object, which is a function of the searchString and currentState.
+         *
+         * @return An int representing the hash code value of this object.
+         */
+        @Override
+        public int hashCode() {
+            return Objects.hash(searchString, currentState);
+        }
     }
 }
