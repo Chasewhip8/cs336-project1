@@ -14,7 +14,7 @@ public abstract class State {
 	}
 	
 	/**
-	 * All concrete consturctors must
+	 * All concrete constructors must
 	 * invoke this one as super(name).
 	 * This way name instance variable is 
 	 * correctly set.

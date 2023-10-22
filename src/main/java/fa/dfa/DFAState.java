@@ -1,4 +1,6 @@
-package fa;
+package fa.dfa;
+
+import fa.State;
 
 /**
  * This class represents a DFA state.

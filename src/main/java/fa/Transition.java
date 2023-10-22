@@ -1,6 +1,6 @@
-package fa.dfa;
+package fa;
 
-import fa.DFAState;
+import fa.dfa.DFAState;
 
 import java.util.Objects;
 
@@ -12,7 +12,7 @@ import java.util.Objects;
  */
 public class Transition {
     // The state from which the transition originates.
-    private final DFAState startState;
+    private final State state;
 
     // The input symbol that triggers the transition.
     private final char transition;
@@ -20,11 +20,11 @@ public class Transition {
     /**
      * Creates a new Transition object from a starting state and a transition symbol.
      *
-     * @param startState The state from which the transition originates.
+     * @param state The state from which the transition originates.
      * @param transition The input symbol that triggers the transition.
      */
-    public Transition(DFAState startState, char transition) {
-        this.startState = startState;
+    public Transition(State state, char transition) {
+        this.state = state;
         this.transition = transition;
     }
 
@@ -33,8 +33,8 @@ public class Transition {
      *
      * @return The state from which the transition originates.
      */
-    public DFAState getStartState() {
-        return startState;
+    public State getState() {
+        return state;
     }
 
     /**
@@ -63,7 +63,7 @@ public class Transition {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Transition that = (Transition) o;
-        return transition == that.transition && Objects.equals(startState, that.startState);
+        return transition == that.transition && Objects.equals(state, that.state);
     }
 
     /**
@@ -75,6 +75,6 @@ public class Transition {
      */
     @Override
     public int hashCode() {
-        return Objects.hash(startState, transition);
+        return Objects.hash(state, transition);
     }
 }

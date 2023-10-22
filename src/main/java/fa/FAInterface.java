@@ -21,7 +21,7 @@ public interface FAInterface {
 	public boolean setFinal(String name);
 	
 	/**
-	 * Adds the initial state to the DFA instance
+	 * Adds the initial state to the FA instance
 	 * @param name is the label of the start state
 	 * @return true if successful and false if no state with such name exists
 	 */
@@ -35,10 +35,10 @@ public interface FAInterface {
 
 
 	/**
-	 * Simulates a DFA on input s to determine
-	 * whether the DFA accepts s.
+	 * Simulates a FA on input s to determine
+	 * whether the FA accepts s.
 	 * @param s - the input string
-	 * @return true if s in the language of the DFA and false otherwise
+	 * @return true if s in the language of the FA and false otherwise
 	 */
 	public abstract boolean accepts(String s);
 	

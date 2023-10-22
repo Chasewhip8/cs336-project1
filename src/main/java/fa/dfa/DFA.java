@@ -1,7 +1,7 @@
 package fa.dfa;
 
-import fa.DFAState;
 import fa.State;
+import fa.Transition;
 
 import java.util.*;
 
@@ -278,15 +278,15 @@ public class DFA implements DFAInterface {
             Transition currentTransition = entry.getKey();
             DFAState nextState = entry.getValue();
             if (currentTransition.getTransition() == symb1) {
-                if (!newDfa.addTransition(currentTransition.getStartState().getName(), nextState.getName(), symb2)){
+                if (!newDfa.addTransition(currentTransition.getState().getName(), nextState.getName(), symb2)){
                     return null;
                 }
             } else if (currentTransition.getTransition() == symb2) {
-                if (!newDfa.addTransition(currentTransition.getStartState().getName(), nextState.getName(), symb1)){
+                if (!newDfa.addTransition(currentTransition.getState().getName(), nextState.getName(), symb1)){
                     return null;
                 }
             } else {
-                if (!newDfa.addTransition(currentTransition.getStartState().getName(), nextState.getName(), currentTransition.getTransition())){
+                if (!newDfa.addTransition(currentTransition.getState().getName(), nextState.getName(), currentTransition.getTransition())){
                     return null;
                 }
             }
